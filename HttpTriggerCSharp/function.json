@@ -1,0 +1,14 @@
+﻿{
+  "bindings": [
+    {
+      "type": "httpTrigger",
+      "methods": [
+        "GET"
+      ],
+      "authLevel": "anonymous",
+      "name": "req"
+    }
+  ],
+  "scriptFile": "../CachingProxy.dll",
+  "entryPoint": "CachingProxy.HttpTrigger.Run"
+}

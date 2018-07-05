@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "CachingProxy": {
+      "commandName": "Executable",
+      "executablePath": "%APPDATA%\\npm\\func.cmd",
+      "commandLineArgs": "host start",
+      "workingDirectory": "$(TargetDir)"
+    }
+  }
+}
