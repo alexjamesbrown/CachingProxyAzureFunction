@@ -22,16 +22,16 @@ namespace CachingProxy
             if (req.Query.TryGetValue("url", out StringValues value))
             {
                 var url = value.First();
-                //todo: if url is not valid....
 
-                using (HttpClient client = new HttpClient())
+                var result = await new CachingRequestProxy()
+                    .RetrieveContents(url);
+
+                if (result == null)
                 {
-                    using (HttpResponseMessage response = await client.GetAsync(url))
-                    {
-                        var content = await response.Content.ReadAsByteArrayAsync();
-                        return new FileContentResult(content, response.Content.Headers.ContentType.MediaType);
-                    }
+                    return new EmptyResult();
                 }
+
+                return new FileContentResult(result.Content, result.ContentType);
             }
 
             return new BadRequestObjectResult("Please pass a url in the query string");
