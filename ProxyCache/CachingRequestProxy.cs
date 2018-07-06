@@ -7,6 +7,13 @@ namespace CachingProxy
     {
         private static HttpClient client = new HttpClient();
 
+        private ICache cache;
+
+        public CachingRequestProxy()
+        {
+            cache = new InMemoryCache();
+        }
+
         public async Task<RequestResult> RetrieveContents(string url)
         {
             //todo: if url is not valid....
