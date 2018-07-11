@@ -1,20 +1,23 @@
 {
   "version": "2.0.0",
   "tasks": [
-    {
-      "label": "clean",
-      "command": "dotnet clean",
-      "type": "shell",
-      "presentation": {
-        "reveal": "always"
-      },
-      "problemMatcher": "$msCompile"
-    },
+    // {
+    //   "label": "clean",
+    //   "command": "dotnet clean",
+    //   "type": "shell",
+    //   "presentation": {
+    //     "reveal": "always"
+    //   },
+    //   "problemMatcher": "$msCompile",
+    //   "args": [
+    //     "${workspaceFolder}"
+    //   ]
+    // },
     {
       "label": "build",
       "command": "dotnet build",
       "type": "shell",
-      "dependsOn": "clean",
+      // "dependsOn": "clean",
       "group": {
         "kind": "build",
         "isDefault": true
@@ -30,7 +33,7 @@
       "type": "shell",
       "dependsOn": "build",
       "options": {
-        "cwd": "${workspaceFolder}/bin/Debug/netstandard2.0"
+        "cwd": "${workspaceFolder}/src/bin/Debug/netstandard2.0"
       },
       "command": "func host start",
       "isBackground": true,

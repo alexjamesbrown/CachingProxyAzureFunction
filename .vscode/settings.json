@@ -2,9 +2,5 @@
   "azureFunctions.projectRuntime": "beta",
   "azureFunctions.projectLanguage": "C#",
   "azureFunctions.templateFilter": "Verified",
-  "azureFunctions.deploySubpath": "bin/Debug/netstandard2.0",
-  "files.exclude": {
-    "**/bin/": true,
-    "**/obj/": true,
-  }
+  "azureFunctions.deploySubpath": "bin/Debug/netstandard2.0"
 }
